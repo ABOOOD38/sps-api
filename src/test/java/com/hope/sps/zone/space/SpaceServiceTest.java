@@ -94,7 +94,7 @@ public class SpaceServiceTest {
         when(customerRepository.findByActiveBookingSessionSpaceIdAndActiveBookingSessionState(spaceId, BookingSession.State.ACTIVE))
                 .thenReturn(Optional.empty());
 
-        // Act and Assert
+        // Execute and Assert
         assertThatExceptionOfType(InvalidResourceProvidedException.class)
                 .isThrownBy(() -> spaceService.getOccupiedSpaceInformation(spaceId));
 
